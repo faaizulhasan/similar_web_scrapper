@@ -1,0 +1,23 @@
+{
+  "name": "similar_web_scrapper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "chromedriver": "^2.43.4",
+    "dom-parser": "^0.1.6",
+    "fs": "^0.0.1-security",
+    "puppeteer": "^1.20.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.fomarkmedia.com/backend/similar_web_scrapper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
