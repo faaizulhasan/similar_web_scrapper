@@ -7,11 +7,15 @@
     "chromedriver": "^2.43.4",
     "dom-parser": "^0.1.6",
     "fs": "^0.0.1-security",
-    "puppeteer": "^1.20.0"
+    "puppeteer": "^1.20.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

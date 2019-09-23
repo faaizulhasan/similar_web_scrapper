@@ -1,32 +1,37 @@
 {
-  "url": "https://www.similarweb.com",
-  "search_company": "whatsapp",
-  "puppeteerSettings": [
-    "--no-sandbox",
-    "--user-agent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3312.0 Safari/537.36'"
+  "url": "https://www.similarweb.com/",
+  "puppeteerConfig": {
+    "headless": false,
+    "ignoreHTTPSErrors": true,
+    "userDataDir": "./userdata",
+    "dumpio": true,
+    "slowMo": 250,
+    "devtools": true,
+    "args": [
+      "--no-sandbox",
+      "--user-agent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3312.0 Safari/537.36'"
+    ]
+  },
+  "puppeteerResolution": {
+    "width": 1700,
+    "height": 1080
+  },
+  "puppeteerPreloadJs": [
+    [
+      "./preload.js",
+      "utf8"
+    ]
   ],
+  "puppeteerHttpHeaders": {
+    "Accept-Language": "en"
+  },
+  "evaluations": {
+    "get_overview": "Sw.preloadedData.overview",
+    "get_countries": "Sw.Countries.list"
+  },
   "selectors": {
-    "click_search_field": "#js-swSearch-input",
-    "select_first_website": "ul.swSearch-dropdownList.js-swSearch-dropdownList.js-swSearch-dropdownList--domains li:first-child a",
-    "navigate_to_login_page": ".btn-header-login a",
-    "click_to_username_field": "input[type=\"email\"]",
-    "click_to_password_field": "input[type=\"password\"]",
-    "click_to_signin": "#SignInButton",
-    "click_to_search_field": ".css-blzthy-input.css-1y92zrp-clearableInput.css-i6dz57-sm.css-j3q2yv-input",
-    "select_domain_type_menu": ".css-1drvj8m-dropdownItem",
-    "select_domain_type": "button.btn.btn--default.dropdown-toggle.css-nzp1c7",
-    "select_domain_type_domain": ".css-1cs1g1b-dropdown.dropdown.show .dropdown-menu .dropdown-item:nth-child(3)",
-    "click_search_button": ".btn.btn--primary.default.css-184i2sh-button",
-    "get_top_ahrefs_rank": "#topAhrefsRank",
-    "get_url_rating": "#UrlRatingContainer span",
-    "get_domain_rating": "#DomainRatingContainer span",
-    "get_backlinks": "#numberOfRefPages a",
-    "get_backlinks_past_days": "#numberOfRefPages small",
-    "get_referring_domains": "#numberOfRefDomains a",
-    "get_organic_keywords": "#numberOfOrganicKeywords",
-    "get_organic_keywords_past_days": "#numberOfOrganicKeywords small",
-    "get_organic_traffic": "#numberOfOrganicTraffic span",
-    "get_organic_traffic_past_days": "#numberOfOrganicTraffic small",
-    "get_traffic_value": "#numberOfOrganicTrafficCost"
+    "search_field": ".swSearch-input",
+    "search_button": "button.swSearch-submit[type='submit']",
+    "captcha_app": "#captcha-app"
   }
 }
