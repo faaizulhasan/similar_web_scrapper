@@ -37,7 +37,7 @@ function getOverview() {
         social.push({
             type: elem.querySelector("a").innerText,
             value: elem.querySelector(".socialItem-value").innerText,
-            icon: elem.querySelector("img").src
+            icon: elem.querySelector("img").dataset.original
         });
     });
     overview.social = social;

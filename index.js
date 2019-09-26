@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/get-info', async (req, res) => {
+    console.log(req)
     const bot = new Bot();
     await bot.launch();
     await bot.initPage(); //.then(() => console.log("Page Opened"));

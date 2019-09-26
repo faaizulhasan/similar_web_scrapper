@@ -4,9 +4,8 @@
     "headless": false,
     "ignoreHTTPSErrors": true,
     "userDataDir": "./userdata",
-    "dumpio": true,
     "slowMo": 250,
-    "devtools": true,
+    "devtools": false,
     "args": [
       "--no-sandbox",
       "--user-agent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3312.0 Safari/537.36'"

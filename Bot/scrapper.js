@@ -72,6 +72,7 @@ class Scrapper {
         let overview = await this.page.evaluate((cmd) => {
             return window[cmd]();
         }, "getOverview");
+        let engagement = (sw.EngagementsGA == null) ? sw.EngagementsSimilarweb : sw.EngagementsGA;
         data.url = sw.RedirectUrl;
         data.logo = sw.Icon;
         data.year_founded = overview.year_founded;
@@ -80,12 +81,12 @@ class Scrapper {
         data.global_rank = sw.GlobalRank[0];
         data.country_rank = sw.CountryRanks[sw.Country][0];
         data.country_name = countries[sw.Country].name;
-        data.total_visits = sw.EngagementsSimilarweb.TotalLastMonthVisits;
-        data.pages_per_visit = sw.EngagementsSimilarweb.PageViews;
-        data.average_visit_duration = sw.EngagementsSimilarweb.TimeOnSite;
-        data.bounce_rate = sw.EngagementsSimilarweb.BounceRate;
+        data.total_visits = engagement.TotalLastMonthVisits;
+        data.pages_per_visit = engagement.PageViews;
+        data.average_visit_duration = engagement.TimeOnSite;
+        data.bounce_rate = engagement.BounceRate;
         data.traffic_sources = sw.TrafficSources;
-        data.trafic_numbers = sw.EngagementsSimilarweb.WeeklyTrafficNumbers;
+        data.trafic_numbers = engagement.WeeklyTrafficNumbers;
         data.social = overview.social;
         data.last_overview = sw.Date;
 
