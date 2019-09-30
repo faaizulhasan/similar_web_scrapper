@@ -46,6 +46,7 @@ class Scrapper {
 
     async visitWebsite() {
         await this.page.goto(this.config.url);
+        console.log('open website...')
         // await this.page.waitForNavigation();
     }
 
