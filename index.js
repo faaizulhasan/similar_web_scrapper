@@ -14,12 +14,13 @@ app.get('/get-info', async (req, res) => {
     const bot = new Bot();
     await bot.launch();
     await bot.initPage(); //.then(() => console.log("Page Opened"));
-    await bot.visitWebsite();//.then(() => console.log("BROWSING WEBSITE"));
+    let data = await bot.visitWebsite();//.then(() => console.log("BROWSING WEBSITE"));
     /*await bot.searchCompany(req.query.query);//.then(() => console.log("BROWSING WEBSITE"));
     let data = await bot.getInfo();//.then(() => console.log("GET COMPANY INFO"));
     console.log("Got Data: ", data);
     await bot.closeBrowser();
     res.send(data);*/
+    res.send(data);
     await bot.closeBrowser();
 });
 

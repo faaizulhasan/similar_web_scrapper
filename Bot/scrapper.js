@@ -45,8 +45,9 @@ class Scrapper {
     }
 
     async visitWebsite() {
-        await this.page.goto(this.config.url);
-        console.log('website...');
+        var response = await this.page.goto(this.config.url);
+        // await this.page.screenshot({path: 'screenshot.png'});
+        return response.headers();
         // await this.page.waitForNavigation();
     }
 
