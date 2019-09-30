@@ -48,7 +48,7 @@ class Scrapper {
         var response = await this.page.goto(this.config.url);
         // await this.page.screenshot({path: 'screenshot.png'});
 
-        // return response.headers();
+        return response.headers();
         // await this.page.waitForNavigation();
     }
 
